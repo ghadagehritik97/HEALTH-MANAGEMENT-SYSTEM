@@ -1,0 +1,43 @@
+name={1:"Hritik",2:"Omkar",3:"Arjun"}
+my={1:"Exercise",2:"Diet"}
+def getdate():
+    import datetime
+    return datetime.datetime.now()
+def hritik():
+    print("Do you want add data or retrive:")
+    c=int(input("Press 1 for add 2 for retrieve"))
+    if c==1:
+        a=int(input("press 1 for Hritik 2 for Omkar and 3 for Arjun"))
+        b=int(input("Presss 1 for Exercise 2 for Diet"))
+        if b==1:
+           e=open(name[a]+my[b]+".txt","a")
+           k=input("which exercise you did?\n")
+           e.write(str(str([getdate()]))+"-"+k)
+           print("Successful!")
+           hritik()
+        elif b==2:
+            f=open(name[a]+my[b]+".txt","a")
+            g=input("what you had eaten?\n")
+            f.write(str(str([getdate()]))+"-"+g)
+            print("Successful!")
+            hritik()
+        else:
+            print("Wrong Choice, sorry try Again!")
+            hritik()
+    if c==2:
+        i=int(input("Whose data you want to retrieve?\nPress 1 for Hritik\nPress 2 for Omakar\nPress 3 for Arjun\n"))
+        h=int(input("Which data you want to retrive-1:Exercise 2:Diet press 1 or 2"))
+        if h==1:
+            content=open(name[i]+my[h]+".txt")
+            t=content.read()
+            print(t)
+            hritik()
+        elif h==2:
+            content=open(name[i]+my[h]+".txt")
+            z=content.read()
+            print(z)
+            hritik()
+        else:
+            print("Wrong Choice,Try again!")
+            hritik()
+hritik()
